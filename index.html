@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Irsyad Agusrizal — Telecommunications Engineering & Network Engineer</title>
+    <meta name="description" content="Portfolio and resume of Muhammad Irsyad Agusrizal, Telecommunications Engineering Graduate and Network Engineer specializing in routing, switching, next-gen firewalls, and cloud networking." />
+    <meta property="og:title" content="Muhammad Irsyad Agusrizal — Telecommunications Engineering & Network Engineer" />
+    <meta property="og:description" content="Portfolio and resume of Muhammad Irsyad Agusrizal, Telecommunications Engineering Graduate and Network Engineer specializing in routing, switching, next-gen firewalls, and cloud networking." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Poppins (bold 700, 800) & Inter (400, 500, 600) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- Reset & Design Tokens --- */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg-page: #f2f2f2;
+        --text-heading: #1a1a1a;
+        --text-body: #4d4d4d;
+        --text-muted: #666666;
+        --border-hairline: #d9d9d9;
+        --accent-orange: #f2a71b;
+        --accent-red: #e8452c;
+        --accent-teal: #66d9d4;
+        --font-heading: 'Poppins', sans-serif;
+        --font-body: 'Inter', sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-page);
+        color: var(--text-body);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-page);
+        color: var(--text-body);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      button, input, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+      }
+
+      /* --- Layout Grid Constraints (Full Width with Consistent 48px Padding) --- */
+      .site-wrapper,
+      .page-content {
+        width: 100%;
+        max-width: none;
+        padding-left: 48px;
+        padding-right: 48px;
+        box-sizing: border-box;
+      }
+
+      /* --- Header --- */
+      #header-main {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--bg-page);
+        border-bottom: 1px solid var(--border-hairline);
+        padding: 24px 0;
+        width: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      #logo-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      #logo-dot {
+        width: 18px;
+        height: 18px;
+        background-color: var(--accent-orange);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      #logo-name {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text-heading);
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      #logo-role {
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 400;
+        color: #737373;
+        line-height: 1;
+        margin-left: 2px;
+      }
+
+      #nav-main {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-heading);
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        background: none;
+        text-decoration: none;
+        transition: color 0.15s ease;
+        line-height: 1;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-orange);
+      }
+
+      .nav-link.active {
+        color: var(--accent-orange);
+        font-weight: 600;
+        border: none;
+        border-bottom: none;
+      }
+
+      .nav-divider {
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        background-color: #c4c4c4;
+        margin: 0 18px;
+        flex-shrink: 0;
+      }
+
+      /* --- Main Content & Tab Switching --- */
+      #main-content {
+        flex: 1;
+        width: 100%;
+        max-width: none;
+        padding: 72px 0 96px;
+        box-sizing: border-box;
+      }
+
+      .tab-section {
+        display: none;
+        animation: fadeIn 0.22s ease forwards;
+      }
+
+      .tab-section.active-section {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- Common Typography & Dividers --- */
+      .section-heading-large {
+        font-family: var(--font-heading);
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--text-heading);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin-bottom: 48px;
+      }
+
+      .hairline-divider {
+        width: 100%;
+        height: 1px;
+        background-color: var(--border-hairline);
+        margin: 56px 0;
+        border: none;
+      }
+
+      /* --- 1. HOME SECTION --- */
+      #section-home .home-grid {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 64px;
+        align-items: center;
+        padding-top: 24px;
+        padding-bottom: 32px;
+        width: 100%;
+      }
+
+      .avatar-wrapper {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #e5e5e5;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        border: none !important;
+      }
+
+      .avatar-fallback {
+        display: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #dedede;
+      }
+
+      .avatar-fallback svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .home-info {
+        text-align: left;
+      }
+
+      .home-hello {
+        font-family: var(--font-heading);
+        font-size: 80px;
+        font-weight: 800;
+        color: var(--text-heading);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 16px;
+      }
+
+      .home-about-heading {
+        font-family: var(--font-heading);
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text-heading);
+        margin-bottom: 18px;
+        letter-spacing: -0.01em;
+      }
+
+      .home-bio {
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--text-body);
+        max-width: 760px;
+        margin-bottom: 44px;
+      }
+
+      .home-cta-row {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .cta-circle-btn {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 1.5px solid #1a1a1a;
+        outline: none;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        cursor: pointer;
+        transition: transform 0.18s ease, filter 0.18s ease;
+        text-decoration: none;
+        user-select: none;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .cta-circle-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(0.95);
+      }
+
+      .cta-circle-btn:active {
+        transform: scale(0.98);
+      }
+
+      #btn-cta-resume {
+        background-color: var(--accent-orange);
+        color: #1a1a1a;
+      }
+
+      #btn-cta-projects {
+        background-color: var(--accent-red);
+        color: #ffffff;
+      }
+
+      #btn-cta-contact {
+        background-color: var(--accent-teal);
+        color: #1a1a1a;
+      }
+
+      /* --- 2. RESUME SECTION --- */
+      .resume-block {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+        align-items: start;
+        width: 100%;
+      }
+
+      .resume-block-label {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-heading);
+        letter-spacing: -0.02em;
+        padding-top: 4px;
+      }
+
+      .timeline-container {
+        position: relative;
+        padding-left: 28px;
+      }
+
+      .timeline-container::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background-color: var(--border-hairline);
+      }
+
+      .timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 24px;
+        margin-bottom: 36px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -28px;
+        top: 8px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: var(--bg-page);
+        border: 2px solid var(--text-heading);
+      }
+
+      .timeline-date {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-muted);
+        line-height: 1.5;
+        padding-top: 2px;
+      }
+
+      .timeline-content h4 {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-heading);
+        margin-bottom: 4px;
+        line-height: 1.3;
+      }
+
+      .timeline-org {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      .timeline-desc {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-body);
+      }
+
+      .resume-bullets {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-top: 8px;
+      }
+
+      .resume-bullets li {
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-body);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 28px;
+      }
+
+      .skill-group h4 {
+        font-family: var(--font-heading);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-heading);
+        margin-bottom: 8px;
+      }
+
+      .skill-group p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-body);
+      }
+
+      .cert-list {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .cert-list li {
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-body);
+      }
+
+      .cert-list strong {
+        color: var(--text-heading);
+        font-weight: 600;
+      }
+
+      /* --- 3. PROJECTS SECTION --- */
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+      }
+
+      .project-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .project-text {
+        text-align: left;
+      }
+
+      .project-title {
+        font-family: var(--font-heading);
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--text-heading);
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.25;
+      }
+
+      .project-tag {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-muted);
+        letter-spacing: 0.01em;
+        margin-bottom: 16px;
+        border-left: 2px solid var(--accent-orange);
+        padding-left: 8px;
+      }
+
+      .project-desc-p {
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--text-body);
+        margin-bottom: 12px;
+      }
+
+      .project-desc-p:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .project-visual {
+        width: 100%;
+        height: 360px;
+        border: 1px solid var(--border-hairline);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
+        will-change: transform;
+      }
+
+      .project-visual:hover {
+        transform: scale(1.02);
+      }
+
+      /* Soft Gradients on Project Visuals (Allowed exception) */
+      #project-visual-1 {
+        background: linear-gradient(135deg, #192028 0%, #242c36 100%);
+      }
+
+      #project-visual-2 {
+        background: linear-gradient(135deg, #1c1a29 0%, #292437 100%);
+      }
+
+      .project-visual svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      /* --- 4. CONTACT SECTION --- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 64px;
+        align-items: start;
+        width: 100%;
+      }
+
+      .contact-info {
+        text-align: left;
+      }
+
+      .contact-lead {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-body);
+        margin-bottom: 32px;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-field-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+
+      .contact-field-value {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-heading);
+      }
+
+      .contact-field-value a {
+        color: var(--text-heading);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .contact-field-value a:hover {
+        color: var(--accent-orange);
+      }
+
+      /* Contact Form */
+      #contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-heading);
+      }
+
+      .form-input, .form-textarea {
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid var(--border-hairline);
+        padding: 12px 14px;
+        font-size: 15px;
+        color: var(--text-heading);
+        outline: none;
+        transition: border-color 0.15s ease;
+      }
+
+      .form-input:focus, .form-textarea:focus {
+        border-color: #999999;
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 140px;
+      }
+
+      .form-submit-row {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      #btn-contact-submit {
+        background-color: var(--accent-orange);
+        color: #1a1a1a;
+        font-family: var(--font-heading);
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px 42px;
+        border-radius: 9999px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.15s ease, filter 0.15s ease;
+      }
+
+      #btn-contact-submit:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.96);
+      }
+
+      #btn-contact-submit:active {
+        transform: translateY(0);
+      }
+
+      #contact-status-note {
+        display: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: #2b7a4b;
+        background-color: #e8f7ee;
+        border: 1px solid #b7e5c9;
+        padding: 10px 16px;
+        max-width: 100%;
+      }
+
+      /* --- FOOTER --- */
+      #footer-main {
+        border-top: 1px solid var(--border-hairline);
+        padding: 32px 0 40px;
+        margin-top: auto;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .footer-item strong {
+        color: var(--text-heading);
+        font-weight: 600;
+      }
+
+      .footer-item a:hover {
+        color: var(--text-heading);
+        text-decoration: underline;
+      }
+
+      /* --- RESPONSIVE DOWN TO MOBILE --- */
+      @media (max-width: 1100px) {
+        #section-home .home-grid {
+          grid-template-columns: 340px 1fr;
+          gap: 48px;
+        }
+
+        .avatar-wrapper {
+          width: 320px;
+          height: 320px;
+        }
+
+        .home-hello {
+          font-size: 64px;
+        }
+
+        .cta-circle-btn {
+          width: 115px;
+          height: 115px;
+          font-size: 15px;
+        }
+
+        .project-row {
+          gap: 40px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 340px 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .site-wrapper,
+        .page-content {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        #section-home .home-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+          text-align: left;
+        }
+
+        .avatar-wrapper {
+          width: 260px;
+          height: 260px;
+        }
+
+        .home-hello {
+          font-size: 52px;
+        }
+
+        .project-row {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .project-row.reverse-row .project-visual {
+          order: -1;
+        }
+
+        .resume-block {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .site-wrapper,
+        .page-content {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .header-content {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+
+        #nav-main {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+        }
+
+        .nav-divider {
+          margin: 0 10px;
+        }
+
+        .home-hello {
+          font-size: 40px;
+        }
+
+        .section-heading-large {
+          font-size: 32px;
+          margin-bottom: 28px;
+        }
+
+        .home-cta-row {
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+
+        .cta-circle-btn {
+          width: 96px;
+          height: 96px;
+          font-size: 14px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .timeline-date {
+          margin-bottom: 2px;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header (same across every tab section) -->
+    <header id="header-main">
+      <div class="header-content page-content">
+        <div id="logo-container" role="button" tabindex="0" onclick="switchTab('home')" onkeydown="if(event.key==='Enter') switchTab('home')" title="Go to Home">
+          <div id="logo-dot"></div>
+          <span id="logo-name">Muhammad Irsyad Agusrizal</span>
+        </div>
+
+        <nav id="nav-main" aria-label="Primary Navigation">
+          <button id="nav-resume" class="nav-link" onclick="switchTab('resume')">Resume</button>
+          <span class="nav-divider" aria-hidden="true"></span>
+          <button id="nav-projects" class="nav-link" onclick="switchTab('projects')">Projects</button>
+          <span class="nav-divider" aria-hidden="true"></span>
+          <button id="nav-contact" class="nav-link" onclick="switchTab('contact')">Contact</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Tab Containers -->
+    <main id="main-content">
+      <!-- 1. HOME SECTION -->
+      <section id="section-home" class="tab-section page-content active-section" aria-label="Home">
+        <div class="home-grid">
+          <!-- Large circular avatar on the left (280px), grey-toned -->
+          <div class="avatar-wrapper" id="home-avatar" aria-label="Portrait avatar of Muhammad Irsyad Agusrizal" style="overflow: hidden; border-radius: 50%;">
+            <img
+              src="./public/assets/aistudio/image/me.jpeg"
+              alt="Muhammad Irsyad Agusrizal"
+              class="avatar-img"
+              id="profile-img"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: 53% 32%; display: block;"
+            />
+            <!-- Fallback initials monogram if photo fails to load -->
+            <div class="avatar-fallback" id="avatar-initials-fallback">
+              <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="280" height="280" fill="#dedede" />
+                <circle cx="140" cy="115" r="48" fill="#4a4a4a" />
+                <path d="M68 238C76 186 104 172 140 172C176 172 204 186 212 238" fill="#383838" />
+                <text x="140" y="125" text-anchor="middle" fill="#ffffff" font-family="'Poppins', sans-serif" font-weight="700" font-size="28" letter-spacing="1">MIA</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right: Hello headline, about me, bio, three round buttons -->
+          <div class="home-info">
+            <h1 class="home-hello" id="home-greeting">Hello</h1>
+            <h2 class="home-about-heading" id="home-subheading">A Bit About Me</h2>
+            <p class="home-bio" id="home-bio-paragraph">
+              I am a Telecommunications Engineering graduate with hands-on experience across network routing and switching, next-generation firewall configuration, cellular and core network technologies, and security operations. With a solid grounding in networking protocols, cloud/virtualized networking, and structured troubleshooting, I translate complex network requirements into reliable, high-availability infrastructure.
+            </p>
+
+            <!-- Three round buttons in a row (100px circles): Resume (orange), Projects (red, white text), Contact (teal) -->
+            <div class="home-cta-row" id="home-cta-buttons">
+              <button id="btn-cta-resume" class="cta-circle-btn" onclick="switchTab('resume')">
+                Resume
+              </button>
+              <button id="btn-cta-projects" class="cta-circle-btn" onclick="switchTab('projects')">
+                Projects
+              </button>
+              <button id="btn-cta-contact" class="cta-circle-btn" onclick="switchTab('contact')">
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. RESUME SECTION -->
+      <section id="section-resume" class="tab-section page-content" aria-label="Resume">
+        <h1 class="section-heading-large" id="heading-resume">Resume</h1>
+
+        <!-- Work Experience Block -->
+        <div class="resume-block" id="resume-experience-block">
+          <div class="resume-block-label">Work Experience</div>
+          <div class="timeline-container" id="experience-timeline">
+            <!-- Experience Item 1: Pertamina Hulu Rokan -->
+            <div class="timeline-item" id="exp-item-1">
+              <div class="timeline-date">June – Aug 2025</div>
+              <div class="timeline-content">
+                <h4>ICT Function Internship</h4>
+                <div class="timeline-org">Pertamina Hulu Rokan • Jambi Merang, South Sumatra</div>
+                <p class="timeline-desc">
+                  Supported enterprise telecommunications and infrastructure operations for upstream operational facilities.
+                </p>
+                <ul class="resume-bullets">
+                  <li>Owned and resolved recurring network incidents across two operational sites from initial diagnosis through resolution, coordinating directly with external vendors and field teams to maintain uninterrupted service.</li>
+                  <li>Configured and migrated a Palo Alto next-generation firewall (PA-220 to PA-440) with zero unplanned downtime, applying hands-on VLAN, routing, and switching fundamentals.</li>
+                  <li>Diagnosed and resolved a live network fault on a radio communication tower through systematic troubleshooting and log analysis.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Leadership / Lab Experience: IoT Research Lab Assistant -->
+            <div class="timeline-item" id="exp-item-2">
+              <div class="timeline-date">July 2024 – July 2026</div>
+              <div class="timeline-content">
+                <h4>IoT Research Lab Assistant</h4>
+                <div class="timeline-org">Mobile Communication Laboratory • Telkom University, Bandung</div>
+                <p class="timeline-desc">
+                  Directed embedded hardware research and IoT communication prototypes for real-time sensor telemetries.
+                </p>
+                <ul class="resume-bullets">
+                  <li>Designed and built embedded, network connected prototypes over two years using Arduino, ESP32, STM32, and RP2040 microcontrollers, integrating sensors and actuators for real-time data acquisition.</li>
+                  <li>Documented circuit designs, embedded firmware including applied research on I2C, UART, GPIO, and PWM interfaces.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hairline-divider" />
+
+        <!-- Education Block -->
+        <div class="resume-block" id="resume-education-block">
+          <div class="resume-block-label">Education</div>
+          <div class="timeline-container" id="education-timeline">
+            <div class="timeline-item" id="edu-item-1">
+              <div class="timeline-date">Oct 2022 – Aug 2026</div>
+              <div class="timeline-content">
+                <h4>Bachelor of Telecommunication Engineering</h4>
+                <div class="timeline-org">Telkom University • Bandung, West Java (GPA 3.35 / 4.00)</div>
+                <p class="timeline-desc">
+                  Specialized in modern telecommunication networks, data communication architecture, and cloud systems.
+                </p>
+                <ul class="resume-bullets">
+                  <li><strong>Core Coursework:</strong> Telecommunication Networks, Communication Data Network, Microprocessor & IoT, Optic & Cellular Communication Systems, Cloud Computing, Ethical Hacking, Python Programming.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hairline-divider" />
+
+        <!-- Skills & Expertise Block -->
+        <div class="resume-block" id="resume-skills-block">
+          <div class="resume-block-label">Skills & Expertise</div>
+          <div class="skills-grid" id="skills-grid-container">
+            <div class="skill-group" id="skill-group-monitoring">
+              <h4>Network Monitoring & Diagnostics</h4>
+              <p>Wireshark, PRTG, SNMP, NetFlow, ping, traceroute, Nmap, iperf, mtr</p>
+            </div>
+
+            <div class="skill-group" id="skill-group-routing">
+              <h4>Routing & Switching Protocols</h4>
+              <p>BGP, OSPF, EIGRP, STP/RSTP, VLAN, VTP, LACP, MPLS, VPLS, VXLAN</p>
+            </div>
+
+            <div class="skill-group" id="skill-group-concepts">
+              <h4>Core Networking Concepts</h4>
+              <p>TCP/IP, UDP, DNS, DHCP, NAT, IPv4, IPv6, Subnetting, QoS, Traffic Shaping, OSI Model</p>
+            </div>
+
+            <div class="skill-group" id="skill-group-security">
+              <h4>Security & Firewall</h4>
+              <p>Palo Alto & Fortinet Firewall Configuration, SSL/TLS VPN, Access Control</p>
+            </div>
+
+            <div class="skill-group" id="skill-group-cloud">
+              <h4>Cloud & Virtualized Networking</h4>
+              <p>SDN, AWS VPC, Azure VNet, GCP Networking, Docker, Kubernetes, Terraform</p>
+            </div>
+
+            <div class="skill-group" id="skill-group-cellular">
+              <h4>Cellular & Telecom (RAN/Core)</h4>
+              <p>4G LTE, 5G NR (NSA/SA), RAN, EPC, 5GC, VoLTE, Drive Testing (G-Net Track)</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hairline-divider" />
+
+        <!-- Certifications Block -->
+        <div class="resume-block" id="resume-certs-block">
+          <div class="resume-block-label">Certifications</div>
+          <div>
+            <ul class="cert-list" id="certifications-list">
+              <li>
+                <strong>Cisco Implementation and Administration (CCNA 200-301) Specialization</strong> — 3 courses, Coursera
+              </li>
+              <li>
+                <strong>Palo Alto Networks Cybersecurity Foundation</strong> — Palo Alto Networks Cybersecurity Academy
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PROJECTS SECTION -->
+      <section id="section-projects" class="tab-section page-content" aria-label="Projects">
+        <h1 class="section-heading-large" id="heading-projects">Projects</h1>
+
+        <div class="projects-list" id="projects-container">
+          <!-- Project 1: PEDOT (Text Left, Visual Right) -->
+          <div class="project-row" id="project-1">
+            <div class="project-text">
+              <h2 class="project-title">PEDOT — Real-Time IoT Gas Leak Detection System</h2>
+              <span class="project-tag">2nd Place IT FEST 4.0 IoT Competition 2025 • Arduino IDE, InfluxDB, Grafana</span>
+              <p class="project-desc-p">
+                Built a real-time gas leak detection system utilizing an ESP32 DevKit V1 microcontroller integrated with an MQ-4 gas sensor and DHT22 temperature/humidity sensor for continuous environmental monitoring.
+              </p>
+              <p class="project-desc-p">
+                Engineered a streaming IoT data pipeline into InfluxDB visualized through live Grafana dashboards, delivering immediate telemetry alerts and historical threshold analytics.
+              </p>
+            </div>
+            <div class="project-visual" id="project-visual-1" style="padding: 0; background: #1a1a1a;">
+              <img 
+                src="./public\assets\aistudio/image/Spontan.jpg" 
+                alt="Smart IoT Gas Leak Detection System (PEDOT)" 
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              />
+            </div>
+          </div>
+
+          <!-- Project 2: MISP Portal ID (Visual Left, Text Right) -->
+          <div class="project-row reverse-row" id="project-2">
+            <div class="project-visual" id="project-visual-2" style="padding: 0; background: #1a1a1a;">
+              <img 
+                src="./public\assets\aistudio/image/misp.png" 
+                alt="MISP Cyber Threat Intelligence Platform" 
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              />
+            </div>
+            <div class="project-text">
+              <h2 class="project-title">MISP Portal ID — Cyber Threat Intelligence Platform</h2>
+              <span class="project-tag">Final Year Thesis • React, TypeScript, Supabase, Groq LLaMA 3.3 70B</span>
+              <p class="project-desc-p">
+                Developed an integrated cyber threat intelligence platform by embedding nine custom PHP widgets into MISP 2.4.218 and incorporating Supabase Realtime for centralized threat monitoring and instant notification dispatch.
+              </p>
+              <p class="project-desc-p">
+                Integrated a Groq-hosted LLaMA 3.3 70B model into the pipeline to translate incoming breach telemetry into plain language risk explanations, minimizing manual interpretation effort.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CONTACT SECTION -->
+      <section id="section-contact" class="tab-section page-content" aria-label="Contact">
+        <div class="contact-grid">
+          <!-- Left Column -->
+          <div class="contact-info">
+            <h1 class="section-heading-large" id="heading-contact" style="margin-bottom: 16px;">Contact</h1>
+            <p class="contact-lead" id="contact-lead-text">
+              Feel free to reach out regarding network engineering opportunities, telecommunications projects, or infrastructure collaborations.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-field" id="field-phone">
+                <div class="contact-field-label">Phone</div>
+                <div class="contact-field-value">+62 813-1619-8040</div>
+              </div>
+
+              <div class="contact-field" id="field-email">
+                <div class="contact-field-label">Email</div>
+                <div class="contact-field-value">
+                  <a href="mailto:muhammadirsyadagusrizal@gmail.com">muhammadirsyadagusrizal@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-field" id="field-linkedin">
+                <div class="contact-field-label">LinkedIn</div>
+                <div class="contact-field-value">
+                  <a href="https://linkedin.com/in/muhammad-irsyad-agusrizal" target="_blank" rel="noopener noreferrer">
+                    linkedin.com/in/muhammad-irsyad-agusrizal
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-field" id="field-location">
+                <div class="contact-field-label">Location</div>
+                <div class="contact-field-value">Purwakarta, West Java, Indonesia</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Form -->
+          <div class="contact-form-wrapper">
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="input-first-name">First Name</label>
+                  <input class="form-input" id="input-first-name" name="firstName" type="text" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="input-last-name">Last Name</label>
+                  <input class="form-input" id="input-last-name" name="lastName" type="text" required placeholder="Doe" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="input-email">Email</label>
+                  <input class="form-input" id="input-email" name="email" type="email" required placeholder="john.doe@example.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="input-subject">Subject</label>
+                  <input class="form-input" id="input-subject" name="subject" type="text" required placeholder="Network Engineering Opportunity" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="input-message">Message</label>
+                <textarea class="form-textarea" id="input-message" name="message" required placeholder="Write your message here..."></textarea>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" id="btn-contact-submit">Submit</button>
+                <div id="contact-status-note" role="status">
+                  Thank you! Your message has been received. I will be in touch shortly.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (same across every tab section) -->
+    <footer id="footer-main">
+      <div class="footer-content page-content">
+        <div class="footer-item" id="footer-phone">
+          <strong>Phone:</strong> +62 813-1619-8040
+        </div>
+        <div class="footer-item" id="footer-email">
+          <strong>Email:</strong> <a href="mailto:muhammadirsyadagusrizal@gmail.com">muhammadirsyadagusrizal@gmail.com</a>
+        </div>
+        <div class="footer-item" id="footer-social">
+          <strong>Follow Me:</strong> <a href="https://linkedin.com/in/muhammad-irsyad-agusrizal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer-item" id="footer-copyright">
+          © 2026 Muhammad Irsyad Agusrizal. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Vanilla JavaScript for Tab Navigation & Form Interaction -->
+    <script>
+      // Switch active section tabs without page reload
+      function switchTab(tabId) {
+        const sections = document.querySelectorAll('.tab-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Hide all sections
+        sections.forEach(function (sec) {
+          sec.classList.remove('active-section');
+        });
+
+        // Deactivate all nav buttons
+        navLinks.forEach(function (btn) {
+          btn.classList.remove('active');
+        });
+
+        // Activate target section
+        const targetSection = document.getElementById('section-' + tabId);
+        if (targetSection) {
+          targetSection.classList.add('active-section');
+        }
+
+        // Activate matching nav button
+        const targetNav = document.getElementById('nav-' + tabId);
+        if (targetNav) {
+          targetNav.classList.add('active');
+        }
+
+        // Smooth scroll to top of viewport
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Update URL hash without forcing jump
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#' + tabId);
+        }
+      }
+
+      // Handle Contact Form Submission
+      function handleContactSubmit(event) {
+        event.preventDefault();
+        const firstName = document.getElementById('input-first-name').value.trim();
+        const note = document.getElementById('contact-status-note');
+
+        if (note) {
+          note.textContent = 'Thank you' + (firstName ? ', ' + firstName : '') + '! Your message has been received. I will be in touch shortly.';
+          note.style.display = 'block';
+        }
+
+        // Clear form fields
+        const form = document.getElementById('contact-form');
+        if (form) {
+          form.reset();
+        }
+      }
+
+      // Read hash on initial page load if present
+      window.addEventListener('DOMContentLoaded', function () {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash && ['home', 'resume', 'projects', 'contact'].includes(hash)) {
+          switchTab(hash);
+        }
+      });
+
+      // Handle browser back/forward navigation
+      window.addEventListener('popstate', function () {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash && ['home', 'resume', 'projects', 'contact'].includes(hash)) {
+          switchTab(hash);
+        } else {
+          switchTab('home');
+        }
+      });
+    </script>
+  </body>
+</html>
